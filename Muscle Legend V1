@@ -62,7 +62,7 @@ Library:Notify{
     Duration = 13 -- Set to nil to make the notification not disappear
 }
 
-Tabs.Home:AddSection("Discord Server https://discord.gg/GxHDZkj365 ")
+Tabs.Home:AddSection("Discord Server link here ")
 
 Tabs.Home:CreateButton({
     Title = "Click to Copy Link",
@@ -75,7 +75,7 @@ Tabs.Home:CreateButton({
                 {
                     Title = "Confirm",
                     Callback = function()
-                        local link = "https://discord.gg/YOUR_INVITE"
+                        local link = "https://discord.gg/GxHDZkj365"
                         setclipboard(link)
                         print("Copied Discord link to clipboard.")
                     end
