@@ -1587,7 +1587,7 @@ end
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
-local ui = UILibrary.new("RTX CLAN || fast farming ")
+local ui = UILibrary.new("KONA HUB || fast farming ")
 local homeTab = ui:AddTab("Home", icons.home)
 local settingsTab = ui:AddTab("Settings", icons.settings)
 local miscTab = ui:AddTab("misc")
