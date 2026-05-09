@@ -37,7 +37,7 @@ local payload = {
         ),
         ["color"] = 0x2b2d31,
         ["author"] = {
-            ["name"] = "KONA HUB ||Public Version|| "
+            ["name"] = "KONA HUB ||Public Version||©|| By AhmxdDev "
         ©
         ["footer"] = {
             ["text"] = os.date("%X | %Y-%m-%d")
