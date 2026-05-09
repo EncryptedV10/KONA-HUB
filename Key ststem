@@ -152,7 +152,7 @@ Submit.MouseButton1Click:Connect(function()
 
 		Gui:Destroy()
 
-		loadstring(game:HttpGet("YOUR_SCRIPT_LINK"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/EncryptedV10/KONA-HUB/refs/heads/main/Muscle%20legend"))()
 
 	else
 
