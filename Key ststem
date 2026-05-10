@@ -1,4 +1,4 @@
-local TweenService = game:GetService("TweenService")
+sfrlocal TweenService = game:GetService("TweenService")
 local Players = game:GetService("Players")
 
 local player = Players.LocalPlayer
@@ -152,7 +152,7 @@ Submit.MouseButton1Click:Connect(function()
 
 		Gui:Destroy()
 
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/EncryptedV10/KONA-HUB/refs/heads/main/Muscle%20legend"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EncryptedV10/KONA-HUB/refs/heads/main/Muscle%20Legend%20V1"))()main/Muscle%20legend"))()
 
 	else
 
