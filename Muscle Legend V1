@@ -75,7 +75,7 @@ Tabs.Home:CreateButton({
                 {
                     Title = "Confirm",
                     Callback = function()
-                        local link = "https://discord.gg/GxHDZkj365"
+                        local link = "https://discord.gg/8QkZzP2uxF"
                         setclipboard(link)
                         print("Copied Discord link to clipboard.")
                     end
