@@ -1,4 +1,205 @@
-sfrlocal TweenService = game:GetService("TweenService")
+local TweenService = game:GetService("TweenService")
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+
+local CORRECT_KEY = "KonaHub2026"
+local GET_KEY_LINK = "PUT_YOUR_KEY_LINK_HERE"
+
+local Gui = Instance.new("ScreenGui", game.CoreGui)
+Gui.Name = "KonaHub_KEY"
+Gui.ResetOnSpawn = false
+
+-- MAIN FRAME
+
+local Main = Instance.new("Frame", Gui)
+Main.Size = UDim2.new(0,400,0,260)
+Main.Position = UDim2.new(0.5,-200,-1,0)
+Main.BackgroundColor3 = Color3.fromRGB(8,8,8)
+Main.BorderSizePixel = 0
+Main.Active = true
+Main.Draggable = true
+
+Instance.new("UICorner", Main).CornerRadius = UDim.new(0,14)
+
+local Stroke = Instance.new("UIStroke", Main)
+Stroke.Color = Color3.fromRGB(0,170,255)
+Stroke.Thickness = 2
+
+TweenService:Create(
+	Main,
+	TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out),
+	{Position = UDim2.new(0.5,-200,0.5,-130)}
+):Play()
+
+-- TITLE
+
+local Title = Instance.new("TextLabel", Main)
+Title.Size = UDim2.new(1,0,0,50)
+Title.BackgroundTransparency = 1
+Title.Text = "💎 Kona Hub | Key System 💎"
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 22
+Title.TextColor3 = Color3.fromRGB(0,170,255)
+
+-- OWNER
+
+local Owner = Instance.new("TextLabel", Main)
+Owner.Size = UDim2.new(1,0,0,30)
+Owner.Position = UDim2.new(0,0,0,45)
+Owner.BackgroundTransparency = 1
+Owner.Text = "Owner : AhmxdDev"
+Owner.Font = Enum.Font.Gotham
+Owner.TextSize = 15
+Owner.TextColor3 = Color3.fromRGB(220,220,220)
+
+-- CLOSE BUTTON
+
+local Close = Instance.new("TextButton", Main)
+Close.Size = UDim2.new(0,30,0,30)
+Close.Position = UDim2.new(1,-35,0,8)
+Close.Text = "X"
+Close.BackgroundColor3 = Color3.fromRGB(255,0,0)
+Close.TextColor3 = Color3.fromRGB(255,255,255)
+Close.Font = Enum.Font.GothamBold
+Close.TextSize = 16
+
+Instance.new("UICorner", Close)
+
+-- MINIMIZE BUTTON
+
+local Min = Instance.new("TextButton", Main)
+Min.Size = UDim2.new(0,30,0,30)
+Min.Position = UDim2.new(1,-70,0,8)
+Min.Text = "-"
+Min.BackgroundColor3 = Color3.fromRGB(255,170,0)
+Min.TextColor3 = Color3.fromRGB(0,0,0)
+Min.Font = Enum.Font.GothamBold
+Min.TextSize = 18
+
+Instance.new("UICorner", Min)
+
+-- KEY BOX
+
+local Box = Instance.new("TextBox", Main)
+Box.Size = UDim2.new(0.8,0,0,42)
+Box.Position = UDim2.new(0.1,0,0.40,0)
+Box.PlaceholderText = "🔒 Enter Key..."
+Box.Text = ""
+Box.BackgroundColor3 = Color3.fromRGB(18,18,18)
+Box.TextColor3 = Color3.fromRGB(255,255,255)
+Box.PlaceholderColor3 = Color3.fromRGB(170,170,170)
+Box.Font = Enum.Font.Gotham
+Box.TextSize = 16
+
+Instance.new("UICorner", Box)
+
+local BoxStroke = Instance.new("UIStroke", Box)
+BoxStroke.Color = Color3.fromRGB(0,170,255)
+
+-- SUBMIT BUTTON
+
+local Submit = Instance.new("TextButton", Main)
+Submit.Size = UDim2.new(0.8,0,0,42)
+Submit.Position = UDim2.new(0.1,0,0.60,0)
+Submit.Text = "🚀 Submit Key"
+Submit.BackgroundColor3 = Color3.fromRGB(0,140,255)
+Submit.TextColor3 = Color3.fromRGB(255,255,255)
+Submit.Font = Enum.Font.GothamBold
+Submit.TextSize = 16
+
+Instance.new("UICorner", Submit)
+
+-- GET KEY BUTTON
+
+local GetKey = Instance.new("TextButton", Main)
+GetKey.Size = UDim2.new(0.8,0,0,30)
+GetKey.Position = UDim2.new(0.1,0,0.80,0)
+GetKey.Text = "🔑 Get Key"
+GetKey.BackgroundTransparency = 1
+GetKey.TextColor3 = Color3.fromRGB(0,170,255)
+GetKey.Font = Enum.Font.GothamBold
+GetKey.TextSize = 15
+
+-- ICON WHEN MINIMIZED
+
+local Icon = Instance.new("ImageButton", Gui)
+Icon.Size = UDim2.new(0,50,0,50)
+Icon.Position = UDim2.new(0,20,0.5,0)
+Icon.Image = "rbxassetid://70457731796900"
+Icon.BackgroundTransparency = 1
+Icon.Visible = false
+Icon.Active = true
+Icon.Draggable = true
+
+-- KEY SYSTEM
+
+Submit.MouseButton1Click:Connect(function()
+
+	if Box.Text == CORRECT_KEY then
+
+		Submit.Text = "✅ Correct Key"
+
+		wait(1)
+
+		TweenService:Create(
+			Main,
+			TweenInfo.new(0.5),
+			{Position = UDim2.new(0.5,-200,1,300)}
+		):Play()
+
+		wait(0.5)
+
+		Gui:Destroy()
+
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/EncryptedV10/KONA-HUB/refs/heads/main/Muslce%20Legend%20V3"))()
+
+	else
+
+		Submit.Text = "❌ Wrong Key"
+
+		wait(1)
+
+		Submit.Text = "🚀 Submit Key"
+
+	end
+end)
+
+-- GET KEY
+
+GetKey.MouseButton1Click:Connect(function()
+
+	if setclipboard then
+		setclipboard(GET_KEY_LINK)
+	end
+
+	GetKey.Text = "📋 Link Copied!"
+
+	wait(1)
+
+	GetKey.Text = "🔑 Get Key"
+
+end)
+
+-- CLOSE
+
+Close.MouseButton1Click:Connect(function()
+	Gui:Destroy()
+end)
+
+-- MINIMIZE
+
+Min.MouseButton1Click:Connect(function()
+	Main.Visible = false
+	Icon.Visible = true
+end)
+
+-- OPEN FROM ICON
+
+Icon.MouseButton1Click:Connect(function()
+	Main.Visible = true
+	Icon.Visible = false
+end)
 local Players = game:GetService("Players")
 
 local player = Players.LocalPlayer
